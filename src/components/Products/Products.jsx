@@ -4,7 +4,7 @@ import Product from "../Product/Product";
 import useStyles from "./styles";
 
 const Products = (props) => {
-  const products = props.products;
+  const { products, onAddToCart } = props;
   const classes = useStyles();
   return (
     <main className={classes.content}>
@@ -12,8 +12,8 @@ const Products = (props) => {
       <Grid container justifyContent="flex-start" spacing={4}>
         {products.map((product) => {
           return (
-            <Grid item key={products.id} xs={12} sm={6} md={4} lg={3}>
-              <Product product={product} />
+            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+              <Product product={product} onAddToCart={onAddToCart} />
             </Grid>
           );
         })}

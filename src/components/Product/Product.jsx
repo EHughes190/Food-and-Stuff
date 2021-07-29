@@ -11,7 +11,7 @@ import { AddShoppingCart } from "@material-ui/icons";
 import useStyles from "./styles";
 
 const Product = (props) => {
-  const product = props.product;
+  const { product, onAddToCart } = props;
   const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -36,7 +36,10 @@ const Product = (props) => {
         />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton aria-label="Add to Cart">
+        <IconButton
+          aria-label="Add to Cart"
+          onClick={() => onAddToCart(product.id, 1)}
+        >
           <AddShoppingCart />
         </IconButton>
       </CardActions>

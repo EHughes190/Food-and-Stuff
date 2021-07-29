@@ -73,7 +73,7 @@ function App() {
     fetchProducts();
     fetchCart();
   }, []);
-  console.log(products);
+
   return (
     <ThemeProvider theme={theme}>
       <Router>

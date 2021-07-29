@@ -1,18 +1,45 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import {
+  InputLabel,
+  Select,
+  MenuItem,
+  Button,
+  Grid,
+  Typography,
+} from "@material-ui/core";
+import { useForm, FormProvider } from "react-hook-form";
+import FormInput from "../FormInput/FormInput";
 
-export default function AddressForm() {
+const AddressForm = () => {
+  const methods = useForm();
   return (
-    <React.Fragment>
+    <>
       <Typography variant="h6" gutterBottom>
-        Shipping address
+        Shipping Address
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+      <FormProvider {...methods}>
+        <form onSubmit="">
+          <Grid container spacing={3}>
+            <FormInput required name="firstName" label="First Name" />
+            <FormInput required name="lastName" label="Last Name" />
+            <FormInput required name="address1" label="Address Line 1" />
+            <FormInput name="address2" label="Address Line 2" />
+            <FormInput required name="city" label="City" />
+            <FormInput required name="zip" label="Zip Code/ Postcode" />
+          </Grid>
+        </form>
+      </FormProvider>
+    </>
+  );
+};
+
+export default AddressForm;
+
+{
+  /* <Grid item xs={12} sm={6}>
           <TextField
             required
             id="firstName"
@@ -89,7 +116,9 @@ export default function AddressForm() {
             autoComplete="shipping country"
           />
         </Grid>
-      </Grid>
-    </React.Fragment>
-  );
+        </Grid>
+          </Grid>
+          </Grid>
+          </Grid>
+          </Grid>*/
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import Product from "../Product/Product";
 import useStyles from "./styles";
 
@@ -9,6 +9,14 @@ const Products = (props) => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
+      <header className={classes.header}>
+        <Typography variant="h1" gutterBottom>
+          Welcome to Food and Stuff
+        </Typography>
+        <Typography variant="h3" color="textSecondary">
+          The only store you need
+        </Typography>
+      </header>
       <Grid container justifyContent="flex-start" spacing={4}>
         {products.map((product) => {
           return (

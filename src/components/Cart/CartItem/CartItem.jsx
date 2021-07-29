@@ -65,6 +65,7 @@ const CartItem = (props) => {
                 {item.line_total.formatted_with_symbol}
               </Typography>
               <Button
+                className={classes.removeBtn}
                 variant="contained"
                 type="button"
                 color="secondary"

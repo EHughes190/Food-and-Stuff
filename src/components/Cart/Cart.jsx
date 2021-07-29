@@ -47,33 +47,34 @@ const Cart = (props) => {
             </Grid>
           ))}
         </Grid>
-        <div className={classes.cardDetails}>
-          <Button
-            className={classes.emptyButton}
-            size="large"
-            type="button"
-            variant="contained"
-            color="secondary"
-            onClick={handleEmptyCart}
-          >
-            Empty Cart
-          </Button>
-
+        <Grid container className={classes.cardDetails}>
           <div className={classes.summary}>
             <Typography variant="h4">
               Subtotal: {cart.subtotal.formatted_with_symbol}
             </Typography>
-            <Button
-              className={classes.checkoutButton}
-              size="large"
-              type="button"
-              variant="contained"
-              color="primary"
-            >
-              Checkout
-            </Button>
+            <div className={classes.actionButtons}>
+              <Button
+                className={classes.emptyButton}
+                size="large"
+                type="button"
+                variant="contained"
+                color="secondary"
+                onClick={handleEmptyCart}
+              >
+                Empty Cart
+              </Button>
+              <Button
+                className={classes.checkoutButton}
+                size="large"
+                type="button"
+                variant="contained"
+                color="primary"
+              >
+                Checkout
+              </Button>
+            </div>
           </div>
-        </div>
+        </Grid>
       </>
     );
   };
@@ -86,6 +87,7 @@ const Cart = (props) => {
       <IconButton component={Link} to="/" className={classes.backBtn}>
         <ArrowBackIosIcon />
       </IconButton>
+
       <Typography className={classes.title} variant="h3">
         Your Shopping Cart
       </Typography>

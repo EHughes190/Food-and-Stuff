@@ -1,8 +1,40 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Products, Navbar, Cart } from "./components";
+import { Products, Navbar, Cart, ScrollToTop } from "./components";
 import { commerce } from "./lib/commerce";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#00695c",
+    },
+    secondary: {
+      main: "#b71c1c",
+    },
+  },
+});
+
+theme.typography.h1 = {
+  fontSize: "2.2rem",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "3rem",
+  },
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "5rem",
+  },
+};
+
+theme.typography.h3 = {
+  fontSize: "1.5rem",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "2rem",
+  },
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "3rem",
+  },
+};
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -43,24 +75,27 @@ function App() {
   }, []);
   console.log(products);
   return (
-    <Router>
-      <div className="App">
-        <Navbar totalItems={cart.total_items} />
-        <Switch>
-          <Route exact path="/">
-            <Products products={products} onAddToCart={handleAddToCart} />
-          </Route>
-          <Route path="/cart">
-            <Cart
-              cart={cart}
-              handleUpdateCartQty={handleUpdateCartQty}
-              handleRemoveFromCart={handleRemoveFromCart}
-              handleEmptyCart={handleEmptyCart}
-            />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div className="App">
+          <ScrollToTop />
+          <Navbar totalItems={cart.total_items} />
+          <Switch>
+            <Route exact path="/">
+              <Products products={products} onAddToCart={handleAddToCart} />
+            </Route>
+            <Route path="/cart">
+              <Cart
+                cart={cart}
+                handleUpdateCartQty={handleUpdateCartQty}
+                handleRemoveFromCart={handleRemoveFromCart}
+                handleEmptyCart={handleEmptyCart}
+              />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

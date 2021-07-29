@@ -21,16 +21,18 @@ export default makeStyles((theme) => ({
   },
   emptyButton: {
     minWidth: "150px",
-    maxHeight: "50px",
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: "5px",
-    },
-    [theme.breakpoints.up("xs")]: {
-      marginRight: "20px",
-    },
+    margin: "10px",
+
+    // [theme.breakpoints.down("xs")]: {
+    //   marginBottom: "5px",
+    // },
+    // [theme.breakpoints.up("xs")]: {
+    //   marginRight: "20px",
+    // },
   },
   checkoutButton: {
     minWidth: "150px",
+    margin: "10px",
   },
   link: {
     textDecoration: "none",
@@ -40,14 +42,16 @@ export default makeStyles((theme) => ({
     marginTop: "10%",
     paddingBottom: "5%",
     width: "100%",
-    height: 200,
-    justifyContent: "space-between",
+    height: "35vh",
+    justifyContent: "flex-end",
     alignItems: "center",
   },
   summary: {
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    paddingRight: "10px",
   },
+  actionButtons: {},
 }));

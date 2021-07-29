@@ -50,4 +50,7 @@ export default makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "space-between",
   },
+  removeBtn: {
+    minWidth: "150px",
+  },
 }));

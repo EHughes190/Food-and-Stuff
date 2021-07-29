@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Products, Navbar, Cart, ScrollToTop } from "./components";
+import { Products, Navbar, Cart, ScrollToTop, Checkout } from "./components";
 import { commerce } from "./lib/commerce";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -91,6 +91,9 @@ function App() {
                 handleRemoveFromCart={handleRemoveFromCart}
                 handleEmptyCart={handleEmptyCart}
               />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
             </Route>
           </Switch>
         </div>

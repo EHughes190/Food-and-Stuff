@@ -64,6 +64,8 @@ const Cart = (props) => {
                 Empty Cart
               </Button>
               <Button
+                component={Link}
+                to="/checkout"
                 className={classes.checkoutButton}
                 size="large"
                 type="button"
@@ -82,7 +84,7 @@ const Cart = (props) => {
   if (!cart.line_items) return "loading...";
 
   return (
-    <Container>
+    <Container className={classes.cart}>
       <div className={classes.toolbar} />
       <IconButton component={Link} to="/" className={classes.backBtn}>
         <ArrowBackIosIcon />

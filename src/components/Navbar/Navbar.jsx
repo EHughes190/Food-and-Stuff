@@ -21,19 +21,15 @@ const Navbar = (props) => {
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <ToolBar>
-          <Typography
-            variant="h6"
-            className={classes.title}
-            color="inherit"
-            component={Link}
-            to="/"
-          >
-            <img
-              src={logo}
-              alt="moustache"
-              height="25px"
-              className={classes.image}
-            />
+          <Typography variant="h6" className={classes.title} color="inherit">
+            <Link to="/">
+              <img
+                src={logo}
+                alt="moustache"
+                height="50px"
+                className={classes.image}
+              />
+            </Link>
             Food and Stuff
           </Typography>
           <div className={classes.grow} />

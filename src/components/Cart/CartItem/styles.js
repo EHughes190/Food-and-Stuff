@@ -22,13 +22,15 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
   },
   card: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     margin: "auto",
     maxWidth: "100%",
   },
-  imageBtn: {
+  imageContainer: {
     width: 175,
     height: 175,
+    display: "flex",
+    alignItems: "center",
   },
   img: {
     margin: "auto",
@@ -40,7 +42,7 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  buttons: {
+  quantity: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -51,6 +53,9 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   removeBtn: {
-    minWidth: "150px",
+    minWidth: "140px",
+  },
+  buttons: {
+    margin: "20px",
   },
 }));

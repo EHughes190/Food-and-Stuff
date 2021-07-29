@@ -18,15 +18,13 @@ const CartItem = (props) => {
   return (
     <div className={classes.root}>
       <Card className={classes.card}>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           <Grid item className={classes.imageContainer}>
-            <ButtonBase className={classes.imageBtn}>
-              <img
-                className={classes.img}
-                alt="complex"
-                src={item.media.source}
-              />
-            </ButtonBase>
+            <img
+              className={classes.img}
+              alt="complex"
+              src={item.media.source}
+            />
           </Grid>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
@@ -39,25 +37,29 @@ const CartItem = (props) => {
                   {item.name}
                 </Typography>
               </Grid>
-              <div className={classes.buttons}>
-                <IconButton
+              <Grid item xs className={classes.quantity}>
+                <Button
+                  className={classes.buttons}
+                  variant="outlined"
                   type="button"
                   onClick={() =>
                     handleUpdateCartQty(item.id, item.quantity - 1)
                   }
                 >
-                  <RemoveIcon color="secondary" />
-                </IconButton>
-                <Typography variant="h6">{item.quantity}</Typography>
-                <IconButton
+                  <RemoveIcon color="secondary" fontSize="medium" />
+                </Button>
+                <Typography variant="h5">{item.quantity}</Typography>
+                <Button
+                  className={classes.buttons}
+                  variant="outlined"
                   type="button"
                   onClick={() =>
                     handleUpdateCartQty(item.id, item.quantity + 1)
                   }
                 >
-                  <AddIcon color="secondary" />
-                </IconButton>
-              </div>
+                  <AddIcon color="secondary" fontSize="medium" />
+                </Button>
+              </Grid>
             </Grid>
 
             <Grid item className={classes.remove}>

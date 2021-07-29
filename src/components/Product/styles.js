@@ -11,9 +11,15 @@ export default makeStyles(() => ({
   cardActions: {
     display: "flex",
     justifyContent: "flex-end",
+    alignItems: "flex-end",
   },
   cardContent: {
     display: "flex",
     justifyContent: "space-between",
+  },
+  description: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "flex-start",
   },
 }));

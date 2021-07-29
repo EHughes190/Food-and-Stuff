@@ -5,6 +5,14 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  backBtn: {
+    marginTop: "5%",
+    marginBottom: "5%",
+    display: "flex",
+    justifyContent: "flex-start",
+    width: "10px",
+    height: "10px",
+  },
   title: {
     marginTop: "5%",
     marginBottom: "5%",

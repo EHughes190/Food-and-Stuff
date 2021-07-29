@@ -1,8 +1,15 @@
 import React from "react";
-import { Container, Typography, Button, Grid } from "@material-ui/core";
+import {
+  Container,
+  Typography,
+  Button,
+  Grid,
+  IconButton,
+} from "@material-ui/core";
 import useStyles from "./styles";
 import CartItem from "./CartItem/CartItem";
 import { Link } from "react-router-dom";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 const Cart = (props) => {
   const { cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart } =
@@ -76,6 +83,9 @@ const Cart = (props) => {
   return (
     <Container>
       <div className={classes.toolbar} />
+      <IconButton component={Link} to="/" className={classes.backBtn}>
+        <ArrowBackIosIcon />
+      </IconButton>
       <Typography className={classes.title} variant="h3">
         Your Shopping Cart
       </Typography>

@@ -13,6 +13,7 @@ import useStyles from "./styles";
 const Product = (props) => {
   const { product, onAddToCart } = props;
   const classes = useStyles();
+
   return (
     <Card className={classes.root}>
       <CardMedia
@@ -29,13 +30,14 @@ const Product = (props) => {
             {product.price.formatted_with_symbol}
           </Typography>
         </div>
-        <Typography
-          dangerouslySetInnerHTML={{ __html: product.description }}
-          variant="body2"
-          color="textSecondary"
-        />
+        <div className={classes.description}>
+          <Typography variant="body2" color="textSecondary">
+            {/* Removes p tags auto filled */}
+            {product.description.substring(3, product.description.length - 4)}
+          </Typography>
+        </div>
       </CardContent>
-      <CardActions disableSpacing className={classes.cardActions}>
+      <CardActions className={classes.cardActions}>
         <IconButton
           aria-label="Add to Cart"
           onClick={() => onAddToCart(product.id, 1)}

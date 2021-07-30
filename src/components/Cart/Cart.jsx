@@ -86,9 +86,12 @@ const Cart = (props) => {
   return (
     <Container className={classes.cart}>
       <div className={classes.toolbar} />
-      <IconButton component={Link} to="/" className={classes.backBtn}>
-        <ArrowBackIosIcon />
-      </IconButton>
+      <div>
+        <Button component={Link} to="/" className={classes.backBtn}>
+          <ArrowBackIosIcon />
+          Back
+        </Button>
+      </div>
 
       <Typography className={classes.title} variant="h3">
         Your Shopping Cart

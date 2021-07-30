@@ -10,8 +10,7 @@ export default makeStyles((theme) => ({
     marginBottom: "5%",
     display: "flex",
     justifyContent: "flex-start",
-    width: "10px",
-    height: "10px",
+    width: "80px",
   },
   title: {
     marginTop: "5%",

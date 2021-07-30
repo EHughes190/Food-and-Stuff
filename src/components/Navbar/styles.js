@@ -13,8 +13,8 @@ export default makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    alignItems: "center",
     display: "flex",
+    alignItems: "center",
     textDecoration: "none",
     fontSize: "15px",
   },

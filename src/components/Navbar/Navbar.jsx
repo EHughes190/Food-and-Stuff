@@ -36,17 +36,19 @@ const Navbar = (props) => {
           <div className={classes.grow} />
           {location.pathname === "/" && (
             <div className={classes.button}>
-              <Button></Button>
-              <IconButton
+              <Button
                 component={Link}
                 to="/cart"
                 aria-label="Show cart items"
                 color="inherit"
               >
-                <Badge badgeContent={totalItems} color="secondary">
-                  <ShoppingCart />
-                </Badge>
-              </IconButton>
+                Cart
+                <IconButton>
+                  <Badge badgeContent={totalItems} color="secondary">
+                    <ShoppingCart />
+                  </Badge>
+                </IconButton>
+              </Button>
             </div>
           )}
         </ToolBar>

@@ -2,6 +2,7 @@ import React from "react";
 import {
   AppBar,
   IconButton,
+  Button,
   Badge,
   MenuItem,
   Menu,
@@ -35,6 +36,7 @@ const Navbar = (props) => {
           <div className={classes.grow} />
           {location.pathname === "/" && (
             <div className={classes.button}>
+              <Button></Button>
               <IconButton
                 component={Link}
                 to="/cart"

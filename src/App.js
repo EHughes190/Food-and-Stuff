@@ -5,6 +5,7 @@ import { commerce } from "./lib/commerce";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
+//THEME STYLING
 const theme = createTheme({
   palette: {
     primary: {
@@ -16,20 +17,22 @@ const theme = createTheme({
   },
 });
 
-theme.typography.h1 = {
+theme.typography.h2 = {
   fontSize: "2.2rem",
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.up("xs")]: {
     fontSize: "3rem",
+    fontWeight: "600",
   },
   [theme.breakpoints.up("lg")]: {
     fontSize: "5rem",
   },
 };
 
-theme.typography.h3 = {
+theme.typography.h4 = {
   fontSize: "1.5rem",
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.up("xs")]: {
     fontSize: "2rem",
+    fontWeight: "400",
   },
   [theme.breakpoints.up("lg")]: {
     fontSize: "3rem",
@@ -40,6 +43,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
 
+  //FUNCTIONS
   const fetchProducts = async () => {
     const response = await commerce.products.list();
     setProducts(response.data);

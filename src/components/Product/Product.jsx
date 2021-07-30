@@ -6,6 +6,7 @@ import {
   CardActions,
   Typography,
   IconButton,
+  Button,
 } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
 import useStyles from "./styles";
@@ -38,12 +39,12 @@ const Product = (props) => {
         </div>
       </CardContent>
       <CardActions className={classes.cardActions}>
-        <IconButton
+        <Button
           aria-label="Add to Cart"
           onClick={() => onAddToCart(product.id, 1)}
         >
-          <AddShoppingCart />
-        </IconButton>
+          Add to Cart <AddShoppingCart className={classes.cartButton} />
+        </Button>
       </CardActions>
     </Card>
   );

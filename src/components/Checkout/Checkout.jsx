@@ -84,9 +84,6 @@ const Checkout = (props) => {
     handleNext();
   };
 
-  console.log(checkoutToken);
-  console.log(shippingData);
-
   return (
     <React.Fragment>
       <CssBaseline />

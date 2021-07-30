@@ -40,7 +40,7 @@ const Review = (props) => {
         </ListItem>
       </List>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12}>
           <Typography variant="h6" gutterBottom className={classes.title}>
             Shipping
           </Typography>
@@ -52,7 +52,7 @@ const Review = (props) => {
           <Typography gutterBottom>{shippingData.city},</Typography>
           <Typography gutterBottom>{shippingData.zip}</Typography>
         </Grid>
-        <Grid item container direction="column" xs={12} sm={6}>
+        {/* <Grid item container direction="column" xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
             Payment details
           </Typography>
@@ -78,7 +78,7 @@ const Review = (props) => {
               </Grid>
             </React.Fragment>
           </Grid>
-        </Grid>
+        </Grid>*/}
       </Grid>
       <br />
       <div style={{ display: "flex", justifyContent: "space-between" }}>

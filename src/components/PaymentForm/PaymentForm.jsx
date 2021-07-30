@@ -6,6 +6,7 @@ import { Typography, Button, Grid } from "@material-ui/core";
 // import Checkbox from "@material-ui/core/Checkbox";
 import { useForm, FormProvider } from "react-hook-form";
 import FormInput from "../FormInput/FormInput";
+import MyCards from "../MyCards/MyCards";
 
 export default function PaymentForm(props) {
   const { handleBack, handlePaymentData } = props;
@@ -15,7 +16,8 @@ export default function PaymentForm(props) {
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
-      <FormProvider {...methods}>
+      <MyCards handleBack={handleBack} handlePaymentData={handlePaymentData} />
+      {/* <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit((data) =>
             handlePaymentData({ ...data })
@@ -27,15 +29,8 @@ export default function PaymentForm(props) {
             <FormInput required name="expiry" label="Expiry Date" />
             <FormInput required name="cvc" label="CVC" />
           </Grid>
-          <br />
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <Button onClick={handleBack}>Back</Button>
-            <Button type="submit" variant="contained" color="primary">
-              Next
-            </Button>
-          </div>
         </form>
-      </FormProvider>
+      </FormProvider> */}
     </React.Fragment>
   );
 }

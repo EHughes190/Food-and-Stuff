@@ -1,17 +1,47 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+import { Typography, Button, Grid } from "@material-ui/core";
+// import Grid from "@material-ui/core/Grid";
+// import TextField from "@material-ui/core/TextField";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import Checkbox from "@material-ui/core/Checkbox";
+import { useForm, FormProvider } from "react-hook-form";
+import FormInput from "../FormInput/FormInput";
 
-export default function PaymentForm() {
+export default function PaymentForm(props) {
+  const { handleBack, handlePaymentData } = props;
+  const methods = useForm();
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
-      <Grid container spacing={3}>
+      <FormProvider {...methods}>
+        <form
+          onSubmit={methods.handleSubmit((data) =>
+            handlePaymentData({ ...data })
+          )}
+        >
+          <Grid container spacing={3}>
+            <FormInput required name="cardName" label="Name on card" />
+            <FormInput required name="cardNum" label="Card number" />
+            <FormInput required name="expiry" label="Expiry Date" />
+            <FormInput required name="cvc" label="CVC" />
+          </Grid>
+          <br />
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Button onClick={handleBack}>Back</Button>
+            <Button type="submit" variant="contained" color="primary">
+              Next
+            </Button>
+          </div>
+        </form>
+      </FormProvider>
+    </React.Fragment>
+  );
+}
+
+{
+  /* <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <TextField
             required
@@ -49,7 +79,5 @@ export default function PaymentForm() {
             autoComplete="cc-csc"
           />
         </Grid>
-      </Grid>
-    </React.Fragment>
-  );
+      </Grid> */
 }

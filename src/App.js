@@ -69,6 +69,10 @@ function App() {
     setCart(response.cart);
   };
 
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+    setCart(newCart);
+  };
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -93,7 +97,7 @@ function App() {
               />
             </Route>
             <Route path="/checkout">
-              <Checkout />
+              <Checkout cart={cart} refreshCart={refreshCart} />
             </Route>
           </Switch>
         </div>

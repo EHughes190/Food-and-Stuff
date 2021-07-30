@@ -24,6 +24,7 @@ export default makeStyles((theme) => ({
   },
   stepper: {
     padding: theme.spacing(3, 0, 5),
+    wordBreak: "break-all",
   },
   buttons: {
     display: "flex",

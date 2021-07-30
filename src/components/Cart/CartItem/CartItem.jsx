@@ -32,7 +32,6 @@ const CartItem = (props) => {
             xs={12}
             sm={6}
             md={4}
-            direction="column"
             className={classes.details}
             spacing={2}
           >

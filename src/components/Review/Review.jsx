@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
   Button,
@@ -52,33 +51,6 @@ const Review = (props) => {
           <Typography gutterBottom>{shippingData.city},</Typography>
           <Typography gutterBottom>{shippingData.zip}</Typography>
         </Grid>
-        {/* <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom className={classes.title}>
-            Payment details
-          </Typography>
-          <Grid container>
-            <React.Fragment>
-              <Grid item xs={6}>
-                <Typography gutterBottom>Name on Card:</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography gutterBottom>{paymentData.cardName}</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography gutterBottom>Card Number:</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography gutterBottom>{paymentData.cardNum}</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography gutterBottom>Expiry:</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography gutterBottom>{paymentData.expiry}</Typography>
-              </Grid>
-            </React.Fragment>
-          </Grid>
-        </Grid>*/}
       </Grid>
       <br />
       <div style={{ display: "flex", justifyContent: "space-between" }}>

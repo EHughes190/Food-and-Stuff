@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Paper from "@material-ui/core/Paper";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import Button from "@material-ui/core/Button";
-//import Link from "@material-ui/core/Link";
+import {
+  Paper,
+  Stepper,
+  Step,
+  StepLabel,
+  Button,
+  Typography,
+} from "@material-ui/core";
 import { Link } from "react-router-dom";
-import Typography from "@material-ui/core/Typography";
 import AddressForm from "../AddressForm/AddressForm";
 import PaymentForm from "../PaymentForm/PaymentForm";
 import Review from "../Review/Review";
@@ -32,6 +33,7 @@ const Checkout = (props) => {
         return (
           <PaymentForm
             handleBack={handleBack}
+            handleNext={handleNext}
             handlePaymentData={handlePaymentData}
           />
         );
@@ -122,29 +124,6 @@ const Checkout = (props) => {
             ) : (
               <React.Fragment>
                 {checkoutToken && getStepContent(activeStep)}
-                {/* <div className={classes.buttons}>
-                  {activeStep === 0 ? (
-                    <Button
-                      component={Link}
-                      to="/cart"
-                      className={classes.button}
-                    >
-                      Cancel
-                    </Button>
-                  ) : (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
-                    </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? "Place order" : "Next"}
-                  </Button>
-                </div> */}
               </React.Fragment>
             )}
           </React.Fragment>

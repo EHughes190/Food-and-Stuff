@@ -9,14 +9,14 @@ import FormInput from "../FormInput/FormInput";
 import MyCards from "../MyCards/MyCards";
 
 export default function PaymentForm(props) {
-  const { handleBack, handlePaymentData } = props;
-  const methods = useForm();
+  const { handleBack, handlePaymentData, handleNext } = props;
+  //const methods = useForm();
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
-      <MyCards handleBack={handleBack} handlePaymentData={handlePaymentData} />
+      <MyCards handleBack={handleBack} handleNext={handleNext} />
       {/* <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit((data) =>
@@ -33,46 +33,4 @@ export default function PaymentForm(props) {
       </FormProvider> */}
     </React.Fragment>
   );
-}
-
-{
-  /* <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cardName"
-            label="Name on card"
-            fullWidth
-            autoComplete="cc-name"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cardNumber"
-            label="Card number"
-            fullWidth
-            autoComplete="cc-number"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="expDate"
-            label="Expiry date"
-            fullWidth
-            autoComplete="cc-exp"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cvv"
-            label="CVV"
-            helperText="Last three digits on signature strip"
-            fullWidth
-            autoComplete="cc-csc"
-          />
-        </Grid>
-      </Grid> */
 }

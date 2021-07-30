@@ -16,7 +16,9 @@ export default function PaymentForm(props) {
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
-      <MyCards handleBack={handleBack} handleNext={handleNext} />
+      <Grid container xs={12}>
+        <MyCards handleBack={handleBack} handleNext={handleNext} />
+      </Grid>
       {/* <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit((data) =>

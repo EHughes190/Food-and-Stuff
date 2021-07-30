@@ -13,6 +13,7 @@ const FormInput = (props) => {
         )}
         control={control}
         name={name}
+        defaultValue=""
       />
     </Grid>
   );

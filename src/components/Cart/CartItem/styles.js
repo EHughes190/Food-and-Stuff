@@ -27,15 +27,19 @@ export default makeStyles((theme) => ({
     maxWidth: "100%",
   },
   imageContainer: {
-    width: 175,
     height: 175,
     display: "flex",
+    justifyContent: "center",
     alignItems: "center",
   },
   img: {
-    margin: "auto",
     maxWidth: "100%",
     maxHeight: "100%",
+  },
+  details: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   itemName: {
     display: "flex",
@@ -50,10 +54,12 @@ export default makeStyles((theme) => ({
   remove: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    alignItems: "center",
   },
   removeBtn: {
     minWidth: "140px",
+    margin: "10px",
   },
   buttons: {
     margin: "20px",

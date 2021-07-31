@@ -10,8 +10,7 @@ import {
 import useStyles from "./styles";
 
 const Review = (props) => {
-  const { checkoutToken, paymentData, shippingData, handleBack, handleNext } =
-    props;
+  const { checkoutToken, shippingData, handleBack, handleNext } = props;
   const classes = useStyles();
 
   return (
@@ -20,6 +19,7 @@ const Review = (props) => {
         Order summary
       </Typography>
       <List disablePadding>
+        {/* MAP OVER CHECKOUT TOKEN WITH CART ITEMS AND DETAILS PRODUCING A LIST */}
         {checkoutToken.live.line_items.map((product) => (
           <ListItem className={classes.listItem} key={product.name}>
             <ListItemText
@@ -38,6 +38,7 @@ const Review = (props) => {
           </Typography>
         </ListItem>
       </List>
+      {/* SHIPPING ADDRESS COLLECTED FROM shippingData */}
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12}>
           <Typography variant="h6" gutterBottom className={classes.title}>

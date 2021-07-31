@@ -4,8 +4,6 @@ import {
   IconButton,
   Button,
   Badge,
-  MenuItem,
-  Menu,
   Typography,
 } from "@material-ui/core";
 import ToolBar from "@material-ui/core/Toolbar";

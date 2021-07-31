@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const AddressForm = (props) => {
   const { handleShippingData } = props;
   const methods = useForm();
-  const onSubmit = (data) => console.log(data);
   return (
     <>
       <Typography variant="h6" gutterBottom>
@@ -15,6 +14,7 @@ const AddressForm = (props) => {
       </Typography>
       <FormProvider {...methods}>
         <form
+          // REACT HOOK FORM SUBMIT HANDLES DATA SPREAD INTO OBJECT. handleShippingData SETS shippingData AND MOVES ONTO NEXT STEP.
           onSubmit={methods.handleSubmit((data) => handleShippingData(data))}
         >
           <Grid container spacing={3}>
@@ -26,6 +26,7 @@ const AddressForm = (props) => {
             <FormInput required name="zip" label="Zip Code/ Postcode" />
           </Grid>
           <br />
+          {/* BUTTON LINKS */}
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Button component={Link} to="/cart">
               Cancel

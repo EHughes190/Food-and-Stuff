@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-start",
     width: "80px",
+    paddingLeft: "0px",
   },
   title: {
     marginTop: "5%",
@@ -52,5 +53,4 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     paddingRight: "10px",
   },
-  actionButtons: {},
 }));

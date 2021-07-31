@@ -18,6 +18,7 @@ import { commerce } from "../../lib/commerce";
 const steps = ["Shipping", "Payment", "Review"];
 
 const Checkout = (props) => {
+  //STATE VARIABLES
   const { cart, refreshCart } = props;
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
@@ -25,6 +26,7 @@ const Checkout = (props) => {
   const [shippingData, setShippingData] = useState({});
   const [paymentData, setPaymentData] = useState({});
 
+  //STEPPER LOGIC
   const getStepContent = (step) => {
     switch (step) {
       case 0:
@@ -53,6 +55,7 @@ const Checkout = (props) => {
     }
   };
 
+  //GENERATE CHECKOUT TOKEN WITH CART INFO
   useEffect(() => {
     const generateToken = async () => {
       try {
@@ -69,6 +72,7 @@ const Checkout = (props) => {
     generateToken();
   }, [cart]);
 
+  //FUNCTIONS
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -106,6 +110,7 @@ const Checkout = (props) => {
               </Step>
             ))}
           </Stepper>
+          {/* TERNARY FOR EITHER SHOWING THE CHECKOUT FORMS OR THE COMPLETION MESSAGE */}
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>

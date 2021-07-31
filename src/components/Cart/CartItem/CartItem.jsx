@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Typography,
-  Button,
-  IconButton,
-  Card,
-  Grid,
-  ButtonBase,
-} from "@material-ui/core";
+import { Typography, Button, Card, Grid } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 import useStyles from "./styles";
@@ -19,6 +12,7 @@ const CartItem = (props) => {
     <div className={classes.root}>
       <Card className={classes.card}>
         <Grid container spacing={3}>
+          {/* IMAGE CONTAINER */}
           <Grid item xs={12} md={4} className={classes.imageContainer}>
             <img
               className={classes.img}
@@ -26,15 +20,8 @@ const CartItem = (props) => {
               src={item.media.source}
             />
           </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            className={classes.details}
-            spacing={2}
-          >
+          {/* PRODUCT AND QUANTITY CONTAINER */}
+          <Grid item xs={12} sm={6} md={4} className={classes.details}>
             <Grid item xs={12} className={classes.itemName}>
               <Typography gutterBottom variant="h5">
                 {item.name}
@@ -60,7 +47,7 @@ const CartItem = (props) => {
               </Button>
             </Grid>
           </Grid>
-
+          {/* PRICE AND REMOVE BUTTON CONTAINER */}
           <Grid item xs={12} sm={6} md={4} className={classes.remove}>
             <Typography variant="h5">
               {item.line_total.formatted_with_symbol}

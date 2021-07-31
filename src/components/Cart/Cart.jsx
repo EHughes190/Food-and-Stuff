@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Typography,
-  Button,
-  Grid,
-  IconButton,
-} from "@material-ui/core";
+import { Container, Typography, Button, Grid } from "@material-ui/core";
 import useStyles from "./styles";
 import CartItem from "./CartItem/CartItem";
 import { Link } from "react-router-dom";
@@ -17,6 +11,7 @@ const Cart = (props) => {
 
   const classes = useStyles();
 
+  // RENDERED IF CART EMPTY
   const EmptyCart = () => {
     return (
       <>
@@ -33,10 +28,12 @@ const Cart = (props) => {
     );
   };
 
+  //RENDERED IF CART HAS ITEMS
   const FilledCart = () => {
     return (
       <>
         <Grid container spacing={4}>
+          {/* RENDERING CART ITEMS */}
           {cart.line_items.map((item) => (
             <Grid item xs={12} sm={12} key={item.id}>
               <CartItem
@@ -47,6 +44,7 @@ const Cart = (props) => {
             </Grid>
           ))}
         </Grid>
+        {/* PRICE TOTAL AND BUTTONS FOR CHECKOUT OR EMPTY CART */}
         <Grid container className={classes.cardDetails}>
           <div className={classes.summary}>
             <Typography variant="h4">
@@ -81,21 +79,20 @@ const Cart = (props) => {
     );
   };
 
+  // ERROR CATCH DELAY
   if (!cart.line_items) return "loading...";
 
   return (
     <Container className={classes.cart}>
       <div className={classes.toolbar} />
-      <div>
-        <Button component={Link} to="/" className={classes.backBtn}>
-          <ArrowBackIosIcon />
-          Back
-        </Button>
-      </div>
-
-      <Typography className={classes.title} variant="h3">
+      <Button component={Link} to="/" className={classes.backBtn}>
+        <ArrowBackIosIcon />
+        Back
+      </Button>
+      <Typography className={classes.title} variant="h4">
         Your Shopping Cart
       </Typography>
+      {/* IF LENGTH OF CART ITEMS IS FALSY (0), DISPLAY EMPTY CART, ELSE SHOW FILLED CART */}
       {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </Container>
   );

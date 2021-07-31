@@ -1,11 +1,11 @@
 import React from "react";
-import { Typography, Button, Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 // import Grid from "@material-ui/core/Grid";
 // import TextField from "@material-ui/core/TextField";
 // import FormControlLabel from "@material-ui/core/FormControlLabel";
 // import Checkbox from "@material-ui/core/Checkbox";
-import { useForm, FormProvider } from "react-hook-form";
-import FormInput from "../FormInput/FormInput";
+// import { useForm, FormProvider } from "react-hook-form";
+// import FormInput from "../FormInput/FormInput";
 import MyCards from "../MyCards/MyCards";
 
 export default function PaymentForm(props) {
@@ -16,7 +16,7 @@ export default function PaymentForm(props) {
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
-      <Grid container xs={12}>
+      <Grid item xs={12}>
         <MyCards handleBack={handleBack} handleNext={handleNext} />
       </Grid>
       {/* <FormProvider {...methods}>

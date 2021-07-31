@@ -1,12 +1,12 @@
 import React from "react";
 import useStyles from "./styles";
 import { Button, Typography } from "@material-ui/core";
-import HeroImage from "../../assets/images/hero-image.jpg";
 import { withStyles } from "@material-ui/core/styles";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link as LinkScroll } from "react-scroll";
 
+// CUSTOM THEME FOR TITLE COLOUR
 const BlueTextTypography = withStyles({
   root: {
     color: blueGrey[800],

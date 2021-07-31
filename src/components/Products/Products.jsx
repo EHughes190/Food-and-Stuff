@@ -12,16 +12,11 @@ const Products = (props) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       <ProductsHero />
-      <section id="products" className={classes.productsSection}>
-        <Grid
-          container
-          justifyContent="flex-start"
-          spacing={4}
-          className={classes.products}
-        >
+      <section id="products" className={classes.products}>
+        <Grid container spacing={3} className={classes.products}>
           {products.map((product) => {
             return (
-              <Grid item key={product.id} xs={12} sm={6} md={3}>
+              <Grid item key={product.id} xs={12} sm={6} md={4}>
                 <Product product={product} onAddToCart={onAddToCart} />
               </Grid>
             );

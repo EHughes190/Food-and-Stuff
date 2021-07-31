@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import HeroImage from "../../assets/images/hero-image.jpg";
 
 export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
@@ -9,10 +8,10 @@ export default makeStyles((theme) => ({
     margin: "auto",
   },
   products: {
-    paddingTop: "100px",
+    paddingTop: "75px",
     padding: theme.spacing(3),
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "center",
   },
   root: {
     flexGrow: 1,

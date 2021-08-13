@@ -2,6 +2,9 @@ A dummy e-commerce site built using react and commerce.js. The project grew out 
 
 A fun and quick dummy shopping experience (don't worry, card info isn't tracked or sent anywhere).
 
+
+- [Live site](https://e-commerce-1bb99.web.app//)
+
 ## Running the project
 
 Once cloned, run 
